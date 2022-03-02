@@ -31,3 +31,11 @@ Route::get('/productos', function () {
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
+
+Route::get('/dashboard',function(){
+    return view('dash.index');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
