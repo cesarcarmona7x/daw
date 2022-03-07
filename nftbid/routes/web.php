@@ -42,6 +42,7 @@ Route::get('/admin',function(){
 });
 
 Route::get('/admin/productos',[ProductosController::class,'miFuncion']);
+Route::post('/admin/productos',[ProductosController::class,'insertar']);
 
 Auth::routes();
 
