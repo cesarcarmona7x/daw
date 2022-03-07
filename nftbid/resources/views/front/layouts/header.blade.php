@@ -20,7 +20,7 @@
                             <li><i class="ti-location-pin"></i> Store location</li>
                             <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
                             <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                            <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+                            <li><i class="ti-power-off"></i><a href="/login">Login</a></li>
                         </ul>
                     </div>
                     <!-- End Top Right -->
@@ -198,7 +198,7 @@
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
                                                 <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>												
+                                                <li><a href="/productos">Product</a></li>												
                                                 <li><a href="#">Service</a></li>
                                                 <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
                                                     <ul class="dropdown">
@@ -213,7 +213,7 @@
                                                         <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <li><a href="/nosotros">Contact Us</a></li>
                                             </ul>
                                     </div>
                                 </div>

@@ -20,6 +20,8 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('/dash/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <script src="{{asset('/dash/vendor/fontawesome-free/js/all.min.js')}}"></script>
+
 </head>
 
 <body id="page-top">
@@ -28,7 +30,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-            @include('dash.layouts.sidebar');
+            @include('dash.layouts.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -85,10 +87,12 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('/dash/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('/dash/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/dash/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
+
     <!-- Core plugin JavaScript-->
-    <script src="{{asset('/dash/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset('/dash/js/sb-admin-2.min.js')}}"></script>
@@ -99,6 +103,7 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('/dash/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('/dash/js/demo/chart-pie-demo.js')}}"></script>
+
 
 </body>
 

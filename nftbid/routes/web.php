@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dash\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,12 @@ Route::get('/nosotros', function () {
 Route::get('/dashboard',function(){
     return view('dash.index');
 });
+
+Route::get('/admin',function(){
+    return view('dash.index');
+});
+
+Route::get('/admin/productos',[ProductosController::class,'miFuncion']);
 
 Auth::routes();
 
