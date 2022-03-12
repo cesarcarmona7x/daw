@@ -6,14 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use App\Models\Nft;
+use Illuminate\Support\Facades\Hash;
 
 class ProductosController extends Controller
 {
     //
     public function miFuncion(){
         $categorias=DB::table('categories')->get();
+        $productos=DB::table('nfts')->orderBy('id','DESC')->get();
         return view('dash.productos')
-            ->with('categorias',$categorias);
+            ->with('categorias',$categorias)
+            ->with('nfts',$productos);
     }
     public function insertar(Request $request){
         $validacion=Validator::make($request->all(),[
@@ -33,7 +37,27 @@ class ProductosController extends Controller
         }
         else{
             echo "Eres la verga";
+            $token_id=Hash::make(rand(0,999999999));
+            $token_standard=Hash::make(rand(0,999999999));
+            $img=$request->file('img');
+            $name=time().'.'.$img->getClientOriginalExtension();
+            $destination_path=public_path('nfts');
+            $request->img->move($destination_path,$name);
+            $nuevo=Nft::create([
+                'name'=>$request->name,
+                'description'=>$request->description,
+                'base_price'=>$request->price,
+                'img'=>$name,
+                'blockchain_type'=>$request->btype,
+                'id_category'=>$request->category,
+                'token_id'=>$token_id,
+                'token_standard'=>$token_standard,
+                'metadata'=>'',
+                'id_user'=>4,
+                'likes'=> 0
+            ]);
+            return back()
+                ->with('Listo','Se ha insertado correctamente');
         }
-        dd($request->name);
     }
 }
