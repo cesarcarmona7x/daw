@@ -64,7 +64,7 @@
     </div>
     @if($message=Session::get('ErrorInsert'))
         <div class="row alert alert-danger alert-dismissable fade show" role="alert">
-            <h5>Error: {{$message}}</h5><br>
+            <h5 class="col-12">Error: {{$message}}</h5><br>
             <ul>
                 @foreach($errors->all() as $error)
                     <li>{{$error}}</li>
@@ -81,7 +81,7 @@
                 <p>{{$message}}</p>
             </div>
         @endif
-        <div class="row">
+        <div class="row col-12">
             @foreach($nfts as $nft)
                 <div class="card col-3">
                     <img class="card-img-top" src="{{ asset('/nfts/'.$nft->img) }}" alt="Card image cap">

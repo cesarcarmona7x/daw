@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dash\ProductosController;
+use App\Http\Controllers\Dash\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,9 @@ Route::get('/admin',function(){
 
 Route::get('/admin/productos',[ProductosController::class,'miFuncion']);
 Route::post('/admin/productos',[ProductosController::class,'insertar']);
+
+Route::get('/admin/categorias',[CategoriesController::class,'index']);
+Route::post('/admin/categorias',[CategoriesController::class,'store']);
 
 Auth::routes();
 

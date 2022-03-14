@@ -53,7 +53,7 @@ class ProductosController extends Controller
                 'token_id'=>$token_id,
                 'token_standard'=>$token_standard,
                 'metadata'=>'',
-                'id_user'=>4,
+                'id_user'=>1,
                 'likes'=> 0
             ]);
             return back()
