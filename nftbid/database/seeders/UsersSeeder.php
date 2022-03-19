@@ -23,7 +23,7 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('123'),
             'phone' => '6361167434',
             'alias' => 'admin',
-            'image' => 'default.jpg'
+            'image' => 'default.png'
         ]);
         DB::table('users')->insert([
             'name' => 'Benito Pablo Juarez Garcia',
@@ -31,7 +31,7 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('123'),
             'phone' => '6361154545',
             'alias' => 'beni',
-            'image' => 'default.jpg'
+            'image' => 'default.png'
         ]);
     }
 }
