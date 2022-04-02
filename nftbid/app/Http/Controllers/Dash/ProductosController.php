@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Hash;
 class ProductosController extends Controller
 {
     //
-    public function miFuncion(){
+    public function index(){
         $categorias=DB::table('categories')->get();
         $productos=DB::table('nfts')->orderBy('id','DESC')->get();
         return view('dash.productos')
             ->with('categorias',$categorias)
             ->with('nfts',$productos);
     }
-    public function insertar(Request $request){
+    public function store(Request $request){
         $validacion=Validator::make($request->all(),[
             'name'=>'required|min:4|max:100',
             'description'=>'required|min:5',

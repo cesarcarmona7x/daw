@@ -17,6 +17,17 @@ use App\Http\Controllers\Front\IndexController;
 */
 
 Route::get('/', [IndexController::class,'index']);
+
+Route::group(['prefix'=>'admin','as'=>'admin'],function(){
+    Route::get('/',function(){
+        return view('dash.index');
+    });
+    
+    Route::resource('productos',ProductosController::class);
+    
+    Route::resource('categorias',CategoriesController::class);
+});
+
 Route::get('/contacto', function () {
     return view('contacto');
 });
@@ -32,20 +43,6 @@ Route::get('/productos', function () {
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
-
-Route::get('/dashboard',function(){
-    return view('dash.index');
-});
-
-Route::get('/admin',function(){
-    return view('dash.index');
-});
-
-Route::get('/admin/productos',[ProductosController::class,'miFuncion']);
-Route::post('/admin/productos',[ProductosController::class,'insertar']);
-
-Route::get('/admin/categorias',[CategoriesController::class,'index']);
-Route::post('/admin/categorias',[CategoriesController::class,'store']);
 
 Auth::routes();
 
