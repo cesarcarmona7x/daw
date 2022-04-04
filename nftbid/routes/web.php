@@ -26,6 +26,7 @@ Route::group(['prefix'=>'admin','as'=>'admin'],function(){
     Route::resource('productos',ProductosController::class);
     
     Route::resource('categorias',CategoriesController::class);
+    Route::post('/categorias/update',[CategoriesController::class,'update']);
 });
 
 Route::get('/contacto', function () {
