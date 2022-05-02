@@ -12,6 +12,9 @@ use File;
 class CategoriesController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $categorias=DB::table('categories')->get();
         return view('dash.categorias')

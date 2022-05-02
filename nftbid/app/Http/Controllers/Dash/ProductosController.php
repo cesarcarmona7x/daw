@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Hash;
 class ProductosController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $categorias=DB::table('categories')->get();
         $productos=DB::table('nfts')->orderBy('id','DESC')->get();
